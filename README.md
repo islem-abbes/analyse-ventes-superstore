@@ -1,6 +1,6 @@
 # 📊 Analyse des ventes Superstore : Python & Power BI
 
-![Vue d'ensemble du dashboard](images/dashboard_vue_ensemble.png)
+![Vue d'ensemble du dashboard](dashboard_vue_ensemble.png)
 
 ## 🎯 Objectif
 Identifier où une entreprise de e-commerce gagne et perd de l'argent,
@@ -51,26 +51,24 @@ Granularité : **1 ligne = 1 produit dans une commande** (5 009 commandes, 793 c
 - **Revoir la politique de remises dans la région Central.**
 - **Analyser la tarification des Tables**, principale source de pertes.
 
-![Scénario : plafonner les remises à 20 %](images/dashboard_scenario.png)
+![Scénario : plafonner les remises à 20 %](dashboard_scenario.png)
 
 ## ⚠️ Limites
 L'estimation de +47 % suppose que les ventes à forte remise disparaissent simplement.
 En réalité, certains clients pourraient ne plus acheter, ou acheter quand même avec 20 % de remise.
 
-## 📂 Structure du projet
-```
-projet-superstore/
-├── data/
-│   ├── Sample - Superstore.csv      # données brutes
-│   ├── superstore_clean.csv         # données nettoyées
-│   ├── superstore_clean.xlsx        # données nettoyées (import Power BI)
-│   └── dashboard_superstore.pbix    # rapport Power BI
-├── images/                          # captures du dashboard
-├── notebooks/
-│   └── 01_exploration.ipynb         # exploration et nettoyage Python
-├── requirements.txt                 # bibliothèques Python
-└── README.md
-```
+## 📂 Fichiers du projet
+| Fichier | Contenu |
+|---|---|
+| `01_exploration.ipynb` | exploration et nettoyage Python |
+| `Sample - Superstore.csv` | données brutes |
+| `superstore_clean.csv` / `superstore_clean.xlsx` | données nettoyées (l'Excel est importé dans Power BI) |
+| `dashboard_superstore.pbix` | rapport Power BI |
+| `dashboard_*.png` | captures du dashboard |
+| `requirements.txt` | bibliothèques Python |
+
+> Le notebook lit les données dans `../data/`. Pour l'exécuter, place les fichiers CSV
+> dans un dossier `data/` à côté d'un dossier `notebooks/` contenant le notebook.
 
 ## ▶️ Reproduire le projet
 ```bash
@@ -79,4 +77,4 @@ python -m venv .venv
 pip install -r requirements.txt
 jupyter notebook
 ```
-Puis ouvrir `data/dashboard_superstore.pbix` avec Power BI Desktop (gratuit).
+Puis ouvrir `dashboard_superstore.pbix` avec Power BI Desktop (gratuit).
